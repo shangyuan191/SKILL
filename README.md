@@ -24,3 +24,4 @@ You need to follow the tutorial in the reference section below to generate your 
 * #### webpage tutorial: https://skllm.beastbyte.ai/
 * #### openai-api and groq free api tutorial: https://ithelp.ithome.com.tw/m/articles/10351845
 * #### groq: https://console.groq.com/
+* #### ipynb demo: https://github.com/e-alizadeh/data-science-blog/blob/master/notebooks/Scikit-LLM-tutorial.ipynb
