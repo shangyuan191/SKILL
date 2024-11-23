@@ -129,5 +129,5 @@ if __name__=="__main__":
 ]
     gpt_summarizer = GPTSummarizer()
     summaries = gpt_summarizer.fit_transform(reviews)
-    for summm in summaries:
-        print(summm)
+    for review,summm in zip(reviews,summaries):
+        print(f"Review: {review}\nSummary: {summm}\n\n")
