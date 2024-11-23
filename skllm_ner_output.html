@@ -1,0 +1,28 @@
+<style>:root { --font-size: 16px; }
+.entity { font-size: var(--font-size); padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+@media (prefers-color-scheme: light) {
+.entity-person { background-color: lightblue; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-person { background-color: lightblue; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-organization { background-color: lightgreen; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-organization { background-color: lightgreen; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-date { background-color: lightcoral; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-date { background-color: lightcoral; color: black; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+}
+@media (prefers-color-scheme: dark) {
+.entity-person { background-color: darkblue; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-person { background-color: darkblue; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-organization { background-color: darkgreen; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-organization { background-color: darkgreen; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-date { background-color: darkred; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-date { background-color: darkred; color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+}
+</style><div style='margin-bottom: 1em;'><style>.entity-legend-person-light { background-color: lightblue; color: black; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-person-dark { background-color: darkblue; color: white; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-person { cursor: pointer; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-organization-light { background-color: lightgreen; color: black; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-organization-dark { background-color: darkgreen; color: white; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-organization { cursor: pointer; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+.entity-legend-date-light { background-color: lightcoral; color: black; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-date-dark { background-color: darkred; color: white; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+.entity-legend-date { cursor: pointer; border-radius: 4px; padding: 2px 4px; font-weight: bold; }
+</style>Entities: <span class="entity-legend-person" title="PERSON: A name of an individual." style="margin-right: 4px;">PERSON</span> <span class="entity-legend-organization" title="ORGANIZATION: A name of a company." style="margin-right: 4px;">ORGANIZATION</span> <span class="entity-legend-date" title="DATE: A specific time reference." style="margin-right: 4px;">DATE</span> </div><hr>San Francisco on <span class="entity entity-date" title="DATE: The date &#x27;June 3, 2022&#x27; is a specific time reference, which matches the definition of a DATE entity.">June 3, 2022</span>.<hr><span class="entity entity-person" title="PERSON: The name &#x27;Elon Musk&#x27; is a specific individual and is a common way to refer to a person.">Elon Musk</span> visited the <span class="entity entity-organization" title="ORGANIZATION: The name &#x27;Tesla&#x27; is a well-known organization and a company&#x27;s name.">Tesla</span> factory in Austin on <span class="entity entity-date" title="DATE: The date &#x27;January 10, 2021&#x27; is a specific point in time.">January 10, 2021</span>.<hr>Metaverse in Silicon Valley on <span class="entity entity-date" title="DATE: May 5, 2023 is a specific date, a declaration date.">May 5, 2023</span>.<hr>

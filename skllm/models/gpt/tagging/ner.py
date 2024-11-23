@@ -9,7 +9,7 @@ class GPTExplainableNER(_ExplainableNER, _GPTTextCompletionMixin):
         entities: Dict[str, str],
         display_predictions: bool = False,
         sparse_output: bool = True,
-        model: str = "gpt-4o",
+        model: str = "whisper-large-v3",
         key: Optional[str] = None,
         org: Optional[str] = None,
         num_workers: int = 1,

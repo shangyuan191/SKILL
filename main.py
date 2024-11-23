@@ -6,6 +6,7 @@ from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 from skllm.models.gpt.vectorization import GPTVectorizer
 from skllm.models.gpt.text2text.translation import GPTTranslator
 from skllm.models.gpt.text2text.summarization import GPTSummarizer
+from skllm.models.gpt.tagging.ner import GPTExplainableNER
 from sklearn.model_selection import train_test_split
 # from skllm.datasets import translation
 import openai
@@ -82,7 +83,10 @@ if __name__=="__main__":
     #     print(f"Review: {review}\nPredicted Sentiment: {sentiment}\n\n")
 
 
+
+    ## Zero-Shot Text Classification
     # Load a demo dataset
+    print("Zero-Shot Text Classification")
     X, y = get_classification_dataset() # labels: positive, negative, neutral
     print(f"X len is {len(X)}")
     print(f"y len is {len(y)}")
@@ -103,6 +107,7 @@ if __name__=="__main__":
 
 
     ## Text Translation
+    print("Text Translation")
     translator = GPTTranslator()
     text_to_translate = ["Je suis étudiant en spécialisation en ingénierie de l'information"]
     # "I am happy that you are reading this post."
@@ -122,6 +127,7 @@ if __name__=="__main__":
 
 
     ## Text Summarization
+    print("Text Summarization")
     reviews = [
     "I dined at The Gourmet Kitchen last night and had a wonderful experience. The service was impeccable, the food was exquisite, and the ambiance was delightful. I had the seafood pasta, which was cooked to perfection. The wine list was also quite impressive. I would highly recommend this restaurant to anyone looking for a fine dining experience.",
     "I visited The Burger Spot for lunch today and was pleasantly surprised. Despite being a fast food joint, the quality of the food was excellent. I ordered the classic cheeseburger and it was juicy and flavorful. The fries were crispy and well-seasoned. The service was quick and the staff was friendly. It's a great place for a quick and satisfying meal.",
@@ -131,3 +137,25 @@ if __name__=="__main__":
     summaries = gpt_summarizer.fit_transform(reviews)
     for review,summm in zip(reviews,summaries):
         print(f"Review: {review}\nSummary: {summm}\n\n")
+
+
+    
+    # ## tagging
+    # print("Named Entity Recognition")
+    # entities = {
+    # "PERSON": "A name of an individual.",
+    # "ORGANIZATION": "A name of a company.",
+    # "DATE": "A specific time reference."
+    # }
+
+    # data = [
+    # "Tim Cook announced new Apple products in San Francisco on June 3, 2022.",
+    # "Elon Musk visited the Tesla factory in Austin on January 10, 2021.",
+    # "Mark Zuckerberg introduced Facebook Metaverse in Silicon Valley on May 5, 2023."
+    # ]
+
+    # ner = GPTExplainableNER(entities=entities, display_predictions=True)
+    # tagged = ner.fit_transform(data)
+    # for d, t in zip(data, tagged):
+    #     print(f"Data: {d}\nTagged: {t}\n\n")
+
