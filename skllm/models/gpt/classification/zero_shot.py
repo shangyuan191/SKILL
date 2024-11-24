@@ -43,6 +43,7 @@ class ZeroShotGPTClassifier(
             **kwargs,
         )
         self._set_keys(key, org)
+        
 
 
 class CoTGPTClassifier(_BaseCoTClassifier, _GPTClassifierMixin, _SingleLabelMixin):

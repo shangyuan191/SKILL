@@ -90,18 +90,28 @@ if __name__=="__main__":
     X, y = get_classification_dataset() # labels: positive, negative, neutral
     print(f"X len is {len(X)}")
     print(f"y len is {len(y)}")
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    print(f"X_train len is {len(X_train)}")
-    print(f"y_train len is {len(y_train)}")
-    print(f"X_test len is {len(X_test)}")
-    print(f"y_test len is {len(y_test)}")
-    # Initialize the model and make the predictions
     clf = ZeroShotGPTClassifier(openai_model="llama3-8b-8192")
-    clf.fit(X_train, y_train)
-    predicted_movie_review_labels = clf.predict(X_test)
-    for review, real_sentiment, predict_sentiment in zip(X_test, y_test, predicted_movie_review_labels):
-        print(f"Review: {review}\nReal Sentiment: {real_sentiment}\nPredicted Sentiment: {predict_sentiment}\n\n")
+    clf.fit(X,y)
+    clf.predict(X) # 實際上並沒有調整 GPT的權重，只是配置一些必要的設定
+    print(clf.score(X,y)) # 使用 GPT內建知識進行推理
 
+
+    ## Few-Shot Text Classification
+    print("Few-Shot Text Classification")
+    from skllm.models.gpt.classification.few_shot import (
+    FewShotGPTClassifier
+    )
+    from skllm.datasets import (
+    get_classification_dataset
+    )
+
+
+    # single label
+    X, y = get_classification_dataset()
+    clf = FewShotGPTClassifier(model="llama3-8b-8192")
+    clf.fit(X,y)
+    labels = clf.predict(X)
+    print(clf.score(X,y))
 
 
 
